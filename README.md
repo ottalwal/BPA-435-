@@ -5,7 +5,7 @@
 BPA 435 Stage Fright Website is a game created for the
 BPA 435 2024-2025 Website Design competition.
 
-# Topic
+## Topic
 
 A local up-and-coming rock band, Stage Fright, has 
 contracted your team to create a website for them.
