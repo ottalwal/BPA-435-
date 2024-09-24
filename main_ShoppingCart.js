@@ -25,26 +25,26 @@ let MerchItem6 = localStorage.getItem("MerchItem6");
 let MerchItem7 = localStorage.getItem("MerchItem7");
 
 //Because out params don't exist in javascript, this just became 50x longer code
-function AddToOrderList(FoodItem){
-    if("MerchItem1" == FoodItem){
+function AddToOrderList(Merch){
+    if("MerchItem1" == Merch){
         MerchItem1++;
     }
-    if("MerchItem2" == FoodItem){
+    if("MerchItem2" == Merch){
         MerchItem2++;
     }
-    if("MerchItem3" == FoodItem){
+    if("MerchItem3" == Merch){
         MerchItem3++;
     }
-    if("MerchItem4" == FoodItem){
+    if("MerchItem4" == Merch){
         MerchItem4++;
     }
-    if("MerchItem5" == FoodItem){
+    if("MerchItem5" == Merch){
         MerchItem5++;
     }
-    if("MerchItem6" == FoodItem){
+    if("MerchItem6" == Merch){
         MerchItem6++;
     }
-    if("MerchItem7" == FoodItem){
+    if("MerchItem7" == Merch){
         MerchItem7++;
     }
     
@@ -57,48 +57,48 @@ function AddToOrderList(FoodItem){
     localStorage.setItem("MerchItem7", MerchItem7)
 }
 
-function RemoveFromOrderList(FoodItem){
-    if("MerchItem1" == FoodItem){
+function RemoveFromOrderList(Merch){
+    if("MerchItem1" == Merch){
         MerchItem1--;
-        console.log("Minus" + FoodItem)
+        console.log("Minus" + Merch)
         if (MerchItem1 < 0){
             MerchItem1 = 0
         }
     }
-    if("MerchItem2" == FoodItem){
+    if("MerchItem2" == Merch){
         MerchItem2--;
-        console.log("Minus" + FoodItem)
+        console.log("Minus" + Merch)
         if (MerchItem2 < 0){
             MerchItem2 = 0
         }
     }
-    if("MerchItem3" == FoodItem){
+    if("MerchItem3" == Merch){
         MerchItem3--;
-        console.log("Minus" + FoodItem)
+        console.log("Minus" + Merch)
         if (MerchItem3 < 0){
             MerchItem3 = 0
         }
     }
-    if("MerchItem4" == FoodItem){
+    if("MerchItem4" == Merch){
         MerchItem4--;
-        console.log("Minus" + FoodItem)
+        console.log("Minus" + Merch)
         if (MerchItem4 < 0){
             MerchItem4 = 0
         }
     }
-    if("MerchItem5" == FoodItem){
+    if("MerchItem5" == Merch){
         MerchItem5--;
         if (MerchItem5 < 0){
             MerchItem5 = 0
         }
     }
-    if("MerchItem6" == FoodItem){
+    if("MerchItem6" == Merch){
         MerchItem6--;
         if (MerchItem6 < 0){
             MerchItem6 = 0
         }
     }
-    if("MerchItem7" == FoodItem){
+    if("MerchItem7" == Merch){
         MerchItem7--;
         if (MerchItem7 < 0){
             MerchItem7 = 0
@@ -123,27 +123,27 @@ function RemoveFromOrderList(FoodItem){
     // AddToList()
 }
 
-function AddToOrderList(FoodItem){
+function AddToOrderList(Merch){
     //AddToOrderList('MerchItem1')
-    if('MerchItem1' == FoodItem){
+    if('MerchItem1' == Merch){
         MerchItem1++;
     }
-    if('MerchItem2' == FoodItem){
+    if('MerchItem2' == Merch){
         MerchItem2++;
     }
-    if("MerchItem3" == FoodItem){
+    if("MerchItem3" == Merch){
         MerchItem3++;
     }
-    if("MerchItem4" == FoodItem){
+    if("MerchItem4" == Merch){
         MerchItem4++;
     }
-    if("MerchItem5" == FoodItem){
+    if("MerchItem5" == Merch){
         MerchItem5++;
     }
-    if("MerchItem6" == FoodItem){
+    if("MerchItem6" == Merch){
         MerchItem6++;
     }
-    if("MerchItem7" == FoodItem){
+    if("MerchItem7" == Merch){
         MerchItem7++;
     }
     
@@ -164,12 +164,12 @@ function AddToOrderList(FoodItem){
     UpdateCardText('MerchItem7', MerchItem7, 'MerchItemName')
 }
 
-function ClickedACard(CardParent, Count, FoodItem){
-    CardParent.querySelector('p').innerHTML = "You have ordered " + Count + " " + FoodItem
+function ClickedACard(CardParent, Count, Merch){
+    CardParent.querySelector('p').innerHTML = "You have ordered " + Count + " " + Merch
 }
 
-function UpdateCardText(CardParent, Count, FoodItem){
-    ElList.querySelector("#" + CardParent).innerHTML = "<h2>"+ FoodItem +"</h2><p>You currently have " + Count + " orders of " + FoodItem.toLowerCase() + " in your basket</p>\
+function UpdateCardText(CardParent, Count, Merch){
+    ElList.querySelector("#" + CardParent).innerHTML = "<h2>"+ Merch +"</h2><p>You currently have " + Count + " orders of " + Merch.toLowerCase() + " in your basket</p>\
     <div class='ButtonContainer'><button type='button' onclick='RemoveFromOrderList(\"" + CardParent + "\")'>&#8722;</button>\
     <button type='button' onclick='AddToOrderList(\"" + CardParent + "\")''>&#43;</button></div>"
 }
