@@ -1,5 +1,11 @@
 :root{
-
+  --PaleBlue: #b3d4ff;
+  --PalePurple: #f8afee;
+  --BoldRose: #f26a8d;
+  --Pink: #f49cbb;
+  --BabyBlue: #d8f8fc;
+  --Shadow: grey;
+  --Orange: orange;
 }
 *{
 
@@ -36,5 +42,73 @@ body {
     color: white;
   }
 
+  #OrderList{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+}
+
+.OrderItem{
+    background-image:linear-gradient(var(--BoldRose), var(--Orange));
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    width: 80%;
+    height: 80%;
+    padding: 1rem;
+    padding-bottom: 0;
+    text-align: center;
+    box-shadow: 2px 2px 2px grey;
+    transition: 0.3s ease;
+    border-radius: 10px;
+}
+
+.OrderItem:hover{
+    box-shadow: 2px 2px 2px rgb(34, 34, 34);
+    transition: 0.3s ease;
+}
+
+button{
+  background-color: var(--BabyBlue);
+  border: none;
+  margin: auto;
+  color: black;
+  padding: 0.7rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+button:hover{
+  background-color: var(--PaleBlue);
+  transition: 0.5 ease;
+}
+
+.ButtonContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: auto;
+  margin: auto;
+  text-align: center;
+}
+
+
 /*************************Section Divider - SectionNameHere*************************/
 
+/* Responsive navigation menu (for mobile devices) */
+@media screen and (max-width: 600px) {
+  .topnav a{
+    float: none;
+    display: block;
+  }
+  
+  .topnav a {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+}

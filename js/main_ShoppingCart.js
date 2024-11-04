@@ -120,11 +120,9 @@ function RemoveFromOrderList(Merch){
     UpdateCardText('MerchItem5', MerchItem5, 'MerchItemName')
     UpdateCardText('MerchItem6', MerchItem6, 'MerchItemName')
     UpdateCardText('MerchItem7', MerchItem7, 'MerchItemName')
-    // AddToList()
 }
 
 function AddToOrderList(Merch){
-    //AddToOrderList('MerchItem1')
     if('MerchItem1' == Merch){
         MerchItem1++;
     }
