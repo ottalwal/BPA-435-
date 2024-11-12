@@ -6,18 +6,189 @@
   --BabyBlue: #d8f8fc;
   --Shadow: grey;
   --Orange: orange;
+  --brand-black: rgb(35, 32, 32);
+  --brand-red: rgb(238, 52, 36);
+  --brand-blue: #00539B;
+  --white: rgb(255, 255, 255);
 }
 *{
-
+  color: white;
+margin:0;
+padding:0;
+box-sizing: border-box;
 }
 main{
 
 }
 body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
   }
-  
+  /*** front page styling****/
+  .navbar {
+    background: #000000;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    top: 0;
+    z-index: 999;
+    border-radius: -10px;
+}
+
+.navbar_container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+    z-index: 3;
+    overflow-y: visible;
+    font-weight: 500;
+    z-index: 999;
+    overflow: hidden;
+}
+
+.navbar_menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    z-index: 999;
+}
+
+.navbar_item {
+    height: 80px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    z-index: 999;
+}
+
+.navbar_link {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 125px;
+    overflow-y: hidden;
+    text-decoration: none;
+    height: 100%;
+    background-image: linear-gradient(rgb(238, 52, 36), rgb(238, 52, 36));
+    background-size: 0% 0.1em;
+    background-position-y: 100%;
+    background-position-x: 50%;
+    background-repeat: no-repeat;
+    transition: background-size 0.2s ease-in-out;
+    z-index: 999;
+}
+
+.navbar_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.embolden {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    height: 100%;
+    width: 125px;
+    color: var(--brand-red);
+    font-weight: 550;
+    background-image: linear-gradient(rgb(238, 52, 36), rgb(238, 52, 36));
+    background-size: 0% 0.1em;
+    background-position-y: 100%;
+    background-position-x: 50%;
+    background-repeat: no-repeat;
+    transition: background-size 0.2s ease-in-out;
+}
+
+#navbar_logo {
+    background: url();
+    background-image: url();
+    background-repeat: no-repeat;
+    background-size: 244.7px 69.7px;
+    margin-top: 1rem;
+    margin-right: 0;
+    width: 440.6px;
+    height: 125.6px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+  .navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    padding:15px 600px;
+    background-color: black
+  }
+  .heroimg {
+    z-index: 2;
+    box-shadow: inset 0 100px 200px 50px #000;
+    width: 100%;
+    height: 89.7vh;
+    background-image: url(./res/rockband3.jpg  );
+    background-position: center 0;
+    background-repeat: no-repeat;
+    display: grid;
+    align-items: center;
+    place-items: center;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 4rem;
+    color: var(--white);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.main_btn {
+    box-shadow: 2px 2px 10px -1px #000;
+    align-items: center;
+    width: 170px;
+    height: 60px;
+    position: relative;
+    cursor: pointer;
+    padding: 17px 45px;
+    background: var(--brand-red);
+    outline: none;
+    top: 17%;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    
+
+    padding: 15px 20px;
+    border: none;
+    text-transform: uppercase;
+    color: var(--white);
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid #041f3d;
+    background: linear-gradient( 8deg, #0d5cb2 0%, #000000 74%);
+    text-align: center;
+}
+
+.main_btn:hover {
+    background: linear-gradient( 50deg, var(--brand-red) 0%, #f2f2f2);;
+}
+
   .topnav {
     overflow: hidden;
     background-color: #333;
