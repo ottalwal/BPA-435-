@@ -265,7 +265,9 @@ button:hover{
   margin: auto;
   text-align: center;
 }
-
+marquee{
+  color: var(--brand-blue);
+}
 
 /*************************Section Divider - SectionNameHere*************************/
 
