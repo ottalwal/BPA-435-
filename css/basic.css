@@ -9,16 +9,13 @@
   --brand-black: rgb(35, 32, 32);
   --brand-red: rgb(238, 52, 36);
   --brand-blue: #71afe6;
-  --white: rgb(255, 255, 255);
+  --White: rgb(255, 255, 255);
 }
 *{
   color: white;
 margin:0;
 padding:0;
 box-sizing: border-box;
-}
-main{
-
 }
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -64,8 +61,41 @@ body {
     z-index: 999;
 }
 
+.navbar_item a{
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+}
+
+.navbar_item a.active{
+  color: black;
+}
+
+.navbar_item a:after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  transform: scaleY(0);
+  transform-origin: top center;
+  background: var(--White);
+  z-index: -1;
+  transition: transform 0.5s;
+}
+.navbar_item a:hover::after{
+  transform: scaleY(1);
+}
+
+.navbar_item a:hover{
+  color: black;
+}
+
 .navbar_link {
-    color: #fff;
+    color: var(--White);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -108,7 +138,7 @@ body {
 }
 
 #navbar_logo {
-  background-image: url(./res/rockband3.jpg);
+    background-image: url(./res/rockband3.jpg);
     background-repeat: no-repeat;
     background-size: 244.7px 69.7px;
     margin-top: 1rem;
@@ -145,7 +175,7 @@ body {
     top: 50%;
     left: 50%;
     font-size: 4rem;
-    color: var(--white);
+    color: var(--White);
     transform: translate(-50%, -50%);
     text-align: center;
     overflow: hidden;
@@ -165,7 +195,7 @@ body {
     padding: 15px 20px;
     border: none;
     text-transform: uppercase;
-    color: var(--white);
+    color: var(--White);
     font-weight: 600;
     letter-spacing: 1px;
     border-radius: 50px;
@@ -201,7 +231,7 @@ body {
   
   .topnav a.active {
     background-color: #04AA6D;
-    color: white;
+    color: var(--White);
   }
 
   #OrderList{
