@@ -244,7 +244,7 @@ body {
 }
 
 #navbar_logo {
-    background-image: url(./res/rockband3.jpg);
+    background-image: url(./res/rockband2.avif);
     background-repeat: no-repeat;
     background-size: 244.7px 69.7px;
     margin-top: 1rem;
@@ -316,30 +316,6 @@ body {
     background: linear-gradient( 50deg, var(--brand-red) 0%, #f2f2f2);;
 }
 
-  .topnav {
-    overflow: hidden;
-    background-color: #333;
-  }
-  
-  .topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  .topnav a.active {
-    background-color: #04AA6D;
-    color: var(--White);
-  }
-
   #OrderList{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -402,15 +378,5 @@ marquee{
 
 /* Responsive navigation menu (for mobile devices) */
 @media screen and (max-width: 600px) {
-  .topnav a{
-    float: none;
-    display: block;
-  }
-  
-  .topnav a {
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: none;
-  }
+
 }
