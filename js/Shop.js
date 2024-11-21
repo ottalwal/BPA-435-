@@ -2,7 +2,7 @@ let ElList = document.querySelector('#OrderList')
 
 function LocalStorageSet(){
     if (localStorage.length == 0){
-        localStorage.setItem("MerchItem1", 0)
+        localStorage.setItem("MerchItem1", 0,)
         localStorage.setItem("MerchItem2", 0)
         localStorage.setItem("MerchItem3", 0)
         localStorage.setItem("MerchItem4", 0)
@@ -23,8 +23,15 @@ let MerchItem4 = localStorage.getItem("MerchItem4");
 let MerchItem5 = localStorage.getItem("MerchItem5");
 let MerchItem6 = localStorage.getItem("MerchItem6");
 let MerchItem7 = localStorage.getItem("MerchItem7");
+let MIP1 = 20 * 0.8;
+let MIP2 = 10 * 0.8;
+let MIP3 = 20 * 0.8;
+let MIP4 = 20 * 0.8;
+let MIP5 = 20 * 0.8;
+let MIP6 = 20 * 0.8;
+let MIP7 = 20 * 0.8;
 
-//Because out params don't exist in javascript, this just became 50x longer code
+//Because out params don't exist in javascript, this just became 50x longer
 function AddToOrderList(Merch){
     if("MerchItem1" == Merch){
         MerchItem1++;
@@ -113,13 +120,13 @@ function RemoveFromOrderList(Merch){
     localStorage.setItem("MerchItem6", MerchItem6)
     localStorage.setItem("MerchItem7", MerchItem7)
 
-    UpdateCardText('MerchItem1', MerchItem1, 'MerchItemName')
-    UpdateCardText('MerchItem2', MerchItem2, 'MerchItemName')
-    UpdateCardText('MerchItem3', MerchItem3, 'MerchItemName')
-    UpdateCardText('MerchItem4', MerchItem4, 'MerchItemName')
-    UpdateCardText('MerchItem5', MerchItem5, 'MerchItemName')
-    UpdateCardText('MerchItem6', MerchItem6, 'MerchItemName')
-    UpdateCardText('MerchItem7', MerchItem7, 'MerchItemName')
+    UpdateCardText('MerchItem1', MerchItem1, 'MerchItemName', 20, 0.8)
+    UpdateCardText('MerchItem2', MerchItem2, 'MerchItemName', 10, 0.8)
+    UpdateCardText('MerchItem3', MerchItem3, 'MerchItemName', 15, 0.8)
+    UpdateCardText('MerchItem4', MerchItem4, 'MerchItemName', 20, 0.6)
+    UpdateCardText('MerchItem5', MerchItem5, 'MerchItemName', 30, 0.5)
+    UpdateCardText('MerchItem6', MerchItem6, 'MerchItemName', 20, 0.8)
+    UpdateCardText('MerchItem7', MerchItem7, 'MerchItemName', 50, 0.8)
 }
 
 function AddToOrderList(Merch){
@@ -153,21 +160,24 @@ function AddToOrderList(Merch){
     localStorage.setItem("MerchItem6", MerchItem6)
     localStorage.setItem("MerchItem7", MerchItem7)
 
-    UpdateCardText('MerchItem1', MerchItem1, 'MerchItemName')
-    UpdateCardText('MerchItem2', MerchItem2, 'MerchItemName')
-    UpdateCardText('MerchItem3', MerchItem3, 'MerchItemName')
-    UpdateCardText('MerchItem4', MerchItem4, 'MerchItemName')
-    UpdateCardText('MerchItem5', MerchItem5, 'MerchItemName')
-    UpdateCardText('MerchItem6', MerchItem6, 'MerchItemName')
-    UpdateCardText('MerchItem7', MerchItem7, 'MerchItemName')
+    UpdateCardText('MerchItem1', MerchItem1, 'MerchItemName', 20, 0.8)
+    UpdateCardText('MerchItem2', MerchItem2, 'MerchItemName', 10, 0.8)
+    UpdateCardText('MerchItem3', MerchItem3, 'MerchItemName', 15, 0.8)
+    UpdateCardText('MerchItem4', MerchItem4, 'MerchItemName', 20, 0.6)
+    UpdateCardText('MerchItem5', MerchItem5, 'MerchItemName', 30, 0.5)
+    UpdateCardText('MerchItem6', MerchItem6, 'MerchItemName', 20, 0.8)
+    UpdateCardText('MerchItem7', MerchItem7, 'MerchItemName', 50, 0.8)
 }
 
 function ClickedACard(CardParent, Count, Merch){
     CardParent.querySelector('p').innerHTML = "You have ordered " + Count + " " + Merch
 }
 
-function UpdateCardText(CardParent, Count, Merch){
-    ElList.querySelector("#" + CardParent).innerHTML = "<h2>"+ Merch +"</h2><p>You currently have " + Count + " orders of " + Merch.toLowerCase() + " in your basket</p>\
-    <div class='ButtonContainer'><button type='button' onclick='RemoveFromOrderList(\"" + CardParent + "\")'>&#8722;</button>\
+function UpdateCardText(CardParent, Count, Merch, Price, Discount){
+    let DPrice = Price * Discount;
+    ElList.querySelector("#" + CardParent).innerHTML = "<h2>"+ Merch +"</h2><h1>Price: $" + DPrice + "</h1>\
+    <div class='ButtonContainer'><button type='button' onclick='RemoveFromOrderList(\"" + CardParent + "\")'>&#8722;</button>" + Count + " ($" + Count*DPrice +")\
     <button type='button' onclick='AddToOrderList(\"" + CardParent + "\")''>&#43;</button></div>"
+
+    localStorage.setItem("TotalCost", )
 }
