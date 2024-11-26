@@ -1,0 +1,12 @@
+{
+    "rescard":[
+        {
+    "description": "Los Angeles Califorina",
+    "cost": "$100+",
+    "location": "Address: 4015 Townsfair Way, Columbus, OH 43219",
+    "link":"http://127.0.0.1:5500/html/tours.html",
+    "img": "https://stock.feinknopf.com/img-get/I0000b8pHobD7SVQ/s/750/750/9459-05.jpg",
+    "alt": "resturant image"
+  }
+]
+}
