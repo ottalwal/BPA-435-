@@ -2,7 +2,7 @@ let ElList = document.querySelector('#OrderList')
 
 function LocalStorageSet(){
     if (localStorage.length == 0){
-        localStorage.setItem("MerchItem1", 0,)
+        localStorage.setItem("MerchItem1", 0)
         localStorage.setItem("MerchItem2", 0)
         localStorage.setItem("MerchItem3", 0)
         localStorage.setItem("MerchItem4", 0)
@@ -11,6 +11,13 @@ function LocalStorageSet(){
         localStorage.setItem("MerchItem7", 0)
         localStorage.setItem("Balance", 0)
         localStorage.setItem("TotalCost", 0)
+        localStorage.setItem("MerchItemPrice1", 20)
+        localStorage.setItem("MerchItemPrice2", 10)
+        localStorage.setItem("MerchItemPrice3", 15)
+        localStorage.setItem("MerchItemPrice4", 20)
+        localStorage.setItem("MerchItemPrice5", 30)
+        localStorage.setItem("MerchItemPrice6", 20)
+        localStorage.setItem("MerchItemPrice7", 50)
     }
 }
 
@@ -23,13 +30,17 @@ let MerchItem4 = localStorage.getItem("MerchItem4");
 let MerchItem5 = localStorage.getItem("MerchItem5");
 let MerchItem6 = localStorage.getItem("MerchItem6");
 let MerchItem7 = localStorage.getItem("MerchItem7");
-let MIP1 = 20 * 0.8;
-let MIP2 = 10 * 0.8;
-let MIP3 = 20 * 0.8;
-let MIP4 = 20 * 0.8;
-let MIP5 = 20 * 0.8;
-let MIP6 = 20 * 0.8;
-let MIP7 = 20 * 0.8;
+
+function CallAThing(){
+    console.log(localStorage.getItem("MerchItemPrice1"))
+    UpdateCardText('MerchItem1', MerchItem1, 'MerchItemName', localStorage.getItem("MerchItemPrice1"))
+    UpdateCardText('MerchItem2', MerchItem2, 'MerchItemName', localStorage.getItem("MerchItemPrice2"))
+    UpdateCardText('MerchItem3', MerchItem3, 'MerchItemName', localStorage.getItem("MerchItemPrice3"))
+    UpdateCardText('MerchItem4', MerchItem4, 'MerchItemName', localStorage.getItem("MerchItemPrice4"))
+    UpdateCardText('MerchItem5', MerchItem5, 'MerchItemName', localStorage.getItem("MerchItemPrice5"))
+    UpdateCardText('MerchItem6', MerchItem6, 'MerchItemName', localStorage.getItem("MerchItemPrice6"))
+    UpdateCardText('MerchItem7', MerchItem7, 'MerchItemName', localStorage.getItem("MerchItemPrice7"))
+}
 
 //Because out params don't exist in javascript, this just became 50x longer
 function AddToOrderList(Merch){
@@ -119,14 +130,10 @@ function RemoveFromOrderList(Merch){
     localStorage.setItem("MerchItem5", MerchItem5)
     localStorage.setItem("MerchItem6", MerchItem6)
     localStorage.setItem("MerchItem7", MerchItem7)
-
-    UpdateCardText('MerchItem1', MerchItem1, 'MerchItemName', 20, 0.8)
-    UpdateCardText('MerchItem2', MerchItem2, 'MerchItemName', 10, 0.8)
-    UpdateCardText('MerchItem3', MerchItem3, 'MerchItemName', 15, 0.8)
-    UpdateCardText('MerchItem4', MerchItem4, 'MerchItemName', 20, 0.6)
-    UpdateCardText('MerchItem5', MerchItem5, 'MerchItemName', 30, 0.5)
-    UpdateCardText('MerchItem6', MerchItem6, 'MerchItemName', 20, 0.8)
-    UpdateCardText('MerchItem7', MerchItem7, 'MerchItemName', 50, 0.8)
+    
+    console.log(localStorage.getItem("MerchItemPrice1"))
+    CallAThing()
+    console.log(localStorage.getItem("MerchItemPrice1"))
 }
 
 function AddToOrderList(Merch){
@@ -160,24 +167,30 @@ function AddToOrderList(Merch){
     localStorage.setItem("MerchItem6", MerchItem6)
     localStorage.setItem("MerchItem7", MerchItem7)
 
-    UpdateCardText('MerchItem1', MerchItem1, 'MerchItemName', 20, 0.8)
-    UpdateCardText('MerchItem2', MerchItem2, 'MerchItemName', 10, 0.8)
-    UpdateCardText('MerchItem3', MerchItem3, 'MerchItemName', 15, 0.8)
-    UpdateCardText('MerchItem4', MerchItem4, 'MerchItemName', 20, 0.6)
-    UpdateCardText('MerchItem5', MerchItem5, 'MerchItemName', 30, 0.5)
-    UpdateCardText('MerchItem6', MerchItem6, 'MerchItemName', 20, 0.8)
-    UpdateCardText('MerchItem7', MerchItem7, 'MerchItemName', 50, 0.8)
+    UpdateCardText('MerchItem1', MerchItem1, 'MerchItemName', 20)
+    UpdateCardText('MerchItem2', MerchItem2, 'MerchItemName', 10)
+    UpdateCardText('MerchItem3', MerchItem3, 'MerchItemName', 15)
+    UpdateCardText('MerchItem4', MerchItem4, 'MerchItemName', 20)
+    UpdateCardText('MerchItem5', MerchItem5, 'MerchItemName', 30)
+    UpdateCardText('MerchItem6', MerchItem6, 'MerchItemName', 20)
+    UpdateCardText('MerchItem7', MerchItem7, 'MerchItemName', 50)
 }
 
 function ClickedACard(CardParent, Count, Merch){
     CardParent.querySelector('p').innerHTML = "You have ordered " + Count + " " + Merch
 }
 
-function UpdateCardText(CardParent, Count, Merch, Price, Discount){
-    let DPrice = Price * Discount;
-    ElList.querySelector("#" + CardParent).innerHTML = "<h2>"+ Merch +"</h2><h1>Price: $" + DPrice + "</h1>\
-    <div class='ButtonContainer'><button type='button' onclick='RemoveFromOrderList(\"" + CardParent + "\")'>&#8722;</button>" + Count + " ($" + Count*DPrice +")\
+function UpdateCardText(CardParent, Count, Merch, Price){
+    ElList.querySelector("#" + CardParent).innerHTML = "<h2>"+ Merch +"</h2><h1>Price: $" + Price + "</h1>\
+    <div class='ButtonContainer'><button type='button' onclick='RemoveFromOrderList(\"" + CardParent + "\")'>&#8722;</button>" + Count + " ($" + Count*Price +")\
     <button type='button' onclick='AddToOrderList(\"" + CardParent + "\")''>&#43;</button></div>"
+    
+    let TotalPrice = 0;
+    for(let i = 1; i<ElList.childElementCount; i++){
+        TotalPrice += parseFloat(localStorage.getItem("MerchItem" + i) * localStorage.getItem("MerchItemPrice" + i))
+    }
 
-    localStorage.setItem("TotalCost", )
+    localStorage.setItem("TotalCost", TotalPrice)
+
+    document.querySelector("#TotalCost").innerHTML = "<h2>Total Price of their Cart: " + localStorage.getItem("TotalCost") + "</h2>"
 }

@@ -6,13 +6,13 @@
     <title>Merchandise</title>
     <link rel="stylesheet" href="../css/basic.css">
 </head>
-<body onload="UpdateCardText('MerchItem1', MerchItem1, 'MerchItemName')
-UpdateCardText('MerchItem2', MerchItem2, 'MerchItemName')
-UpdateCardText('MerchItem3', MerchItem3, 'MerchItemName')
-UpdateCardText('MerchItem4', MerchItem4, 'MerchItemName')
-UpdateCardText('MerchItem5', MerchItem5, 'MerchItemName')
-UpdateCardText('MerchItem6', MerchItem6, 'MerchItemName')
-UpdateCardText('MerchItem7', MerchItem7, 'MerchItemName')">
+<body onload="UpdateCardText('MerchItem1', MerchItem1, 'MerchItemName', 20)
+UpdateCardText('MerchItem2', MerchItem2, 'MerchItemName', 10)
+UpdateCardText('MerchItem3', MerchItem3, 'MerchItemName', 15)
+UpdateCardText('MerchItem4', MerchItem4, 'MerchItemName', 20)
+UpdateCardText('MerchItem5', MerchItem5, 'MerchItemName', 30)
+UpdateCardText('MerchItem6', MerchItem6, 'MerchItemName', 20)
+UpdateCardText('MerchItem7', MerchItem7, 'MerchItemName', 50)">
 <marquee>SALE! Our T-Shirts are currently 25% OFF!! SALE!</marquee>
 <nav class="navbar">
     <div class="navbar_container">
@@ -47,6 +47,8 @@ UpdateCardText('MerchItem7', MerchItem7, 'MerchItemName')">
         </ul>
     </div>
 </nav>
+<div id="TotalCost">
+</div>
 <div id="OrderList">
     <div class='OrderItem' id='MerchItem1'>
     </div>
