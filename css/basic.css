@@ -12,22 +12,19 @@
   --White: rgb(255, 255, 255);
 }
 *{
-  color: white;
+  
 margin:0;
 padding:0;
 box-sizing: border-box;
 }
 body {
   font-family: Arial, Helvetica, sans-serif;
-<<<<<<< HEAD
   background-color: black;
-  overflow-y:scroll ;
-
-=======
->>>>>>> bf0e497b8c32de64f41b845b19047302d9664346
+  overflow:hidden;
 }
+ 
 /*************************************/
-/* Loading Styling */
+/* Loading Styling *
 .loading_screen {
   position: fixed;
   width: 100%;
@@ -64,6 +61,7 @@ body {
   background: #fff;
   z-index: 99999999;
 }
+*/
 .bar {
   height: 5px;
   z-index: 99999999;
@@ -138,18 +136,17 @@ body {
     height: 80px;
     display: flex;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 8rem;
     top: 0;
-    z-index: 999;
+    z-index: 9;
     border-radius: -10px;
 }
 
 .navbar_container {
-<<<<<<< HEAD
   display: flex;
   justify-content: center;
   height: 80px;
-  width: 300%;
+  width: 3400px;
   max-width: 2000px;
   margin: 0 auto;
   padding: 0 50px;
@@ -158,43 +155,23 @@ body {
   font-weight: 500;
   z-index: 999;
   overflow: hidden;
-=======
-    display: flex;
-    justify-content:center;
-    height: 80px;
-    width: 100%;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 50px;
-    z-index: 3;
-    overflow-y: visible;
-    font-weight: 500;
-    z-index: 999;
-    overflow: hidden;
->>>>>>> bf0e497b8c32de64f41b845b19047302d9664346
 }
 
-.navbar_menu {
+ .navbar_menu {
+  width: 30rem;
     display: flex;
     align-items: center;
     list-style: none;
     z-index: 999;
-}
+} 
 
 .navbar_item {
-<<<<<<< HEAD
   height: 80px;
   width: 5.5rem;
   overflow-x: hidden;
   overflow-y: hidden;
   z-index: 999;
 
-=======
-    height: 80px;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    z-index: 999;
->>>>>>> bf0e497b8c32de64f41b845b19047302d9664346
 }
 
 .navbar_item a{
@@ -231,7 +208,6 @@ body {
 }
 
 .navbar_link {
-<<<<<<< HEAD
   color: var(--White);
   display: flex;
   align-items: center;
@@ -248,23 +224,6 @@ body {
   background-repeat: no-repeat;
   transition: background-size 0.2s ease-in-out;
   z-index: 999;
-=======
-    color: var(--White);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 125px;
-    overflow-y: hidden;
-    text-decoration: none;
-    height: 100%;
-    background-image: linear-gradient(rgb(238, 52, 36), rgb(238, 52, 36));
-    background-size: 0% 0.1em;
-    background-position-y: 100%;
-    background-position-x: 50%;
-    background-repeat: no-repeat;
-    transition: background-size 0.2s ease-in-out;
-    z-index: 999;
->>>>>>> bf0e497b8c32de64f41b845b19047302d9664346
 }
 
 .navbar_button {
@@ -308,15 +267,15 @@ body {
     display:flex;
     justify-content:space-between;
     align-items: center;
-    padding:15px 600px;
+    padding:40px 600px;
     background-color: black
   }
   .heroimg {
     z-index: 2;
     box-shadow: inset 0 100px 200px 50px #000;
-    width: 100%;
-    height: 98.7vh;
-    background-image: url(./res/rockband3.jpg);
+    
+    height: 100vh;
+    background-image: url(./res/band.png);
     background-position: center 0;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -327,10 +286,10 @@ body {
 
 .centered {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: 4rem;
-    color: var(--White);
+    top: 3%;
+    left: 20%;
+    font-size: 2rem;
+    color: whitesmoke;
     transform: translate(-50%, -50%);
     text-align: center;
     overflow: hidden;
