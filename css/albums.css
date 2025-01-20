@@ -1,7 +1,7 @@
 .albums-container {
     display: flex;
     flex-direction: column;
-    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-y: auto;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -12,7 +12,7 @@
     display: flex;
     align-items: center;
     gap: 30px;
-    border-bottom: 1px solid #444; /* Add a separator between albums */
+    border-bottom: 1px solid #444;
 }
 
 .album-section:last-child {

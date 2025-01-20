@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 'product5', name: 'Vinyl Record', price: 30, image: '../res/vinyl.jpg' },
         { id: 'product6', name: 'Sticker Pack', price: 5, image: '../res/stickers.jpg' },
         { id: 'product7', name: 'Band Keychain', price: 8, image: '../res/keychain.jpg' },
-        // Add more products here
+        
     ];
 
     function renderProducts() {
