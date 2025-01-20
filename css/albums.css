@@ -1,0 +1,80 @@
+.albums-container {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.album-section {
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    border-bottom: 1px solid #444; /* Add a separator between albums */
+}
+
+.album-section:last-child {
+    border-bottom: none;
+}
+
+.album-image {
+    flex: 1;
+    max-width: 40%;
+}
+
+.album-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.album-details {
+    flex: 1;
+    color: var(--White);
+}
+
+.album-details h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--brand-red);
+}
+
+.track-list {
+    margin-bottom: 20px;
+}
+
+.track-list li {
+    margin-bottom: 5px;
+    color: #ddd;
+}
+
+.add-to-cart-album {
+    background-color: var(--brand-blue);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-to-cart-album:hover {
+    background-color: lighten(var(--brand-blue), 10%);
+    transform: scale(1.02);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .album-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .album-image {
+        max-width: 80%;
+        margin: 0 auto 20px;
+    }
+}

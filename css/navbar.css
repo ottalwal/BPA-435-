@@ -1,0 +1,138 @@
+.navbar {
+    background: #000000;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    position: sticky;
+}
+
+.navbar_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.navbar_logo {
+    color: var(--White);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar_menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar_item {
+    margin-left: 20px;
+}
+
+.navbar_link {
+    color: var(--White);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.navbar_link:hover, .navbar_link.active {
+    color: var(--brand-red);
+}
+
+.navbar_link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--brand-red);
+    transition: width 0.3s ease;
+}
+
+.navbar_link:hover::after, .navbar_link.active::after {
+    width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar_container {
+        padding: 0 10px;
+    }
+    .navbar_logo {
+        font-size: 1.2rem;
+    }
+    .navbar_menu {
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        align-items: flex-start;
+        display: none;
+    }
+    .navbar_item {
+        margin: 10px 0;
+        padding-left: 20px;
+    }
+    .navbar_link {
+        font-size: 1.1rem;
+        display: block;
+        padding: 10px 0;
+    }
+    /* Add a class to the navbar to show the menu */
+    .navbar.active .navbar_menu {
+        display: flex;
+    }
+}
+
+/* Loading Styling *
+.loading_screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  color: #fff;
+  pointer-events: none;
+  z-index: 99999999;
+}
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  background: rgb(80, 80, 80);
+  z-index: 99999999;
+}
+.loader-1 {
+  position: relative;
+  background: #fff;
+  width: 200px;
+  z-index: 99999999;
+}
+.loader-2 {
+  position: relative;
+  width: 100px;
+  background: #fff;
+  z-index: 99999999;
+}
+*/

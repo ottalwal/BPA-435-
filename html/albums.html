@@ -3,10 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
+    <title>Albums</title>
     <link rel="stylesheet" href="../css/basic.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/albums.css">
 </head>
 <body>
-    
+    <nav class="navbar">
+        <div class="navbar_container">
+            <a href="../html/index.html" class="navbar_logo">Stage Freight</a>
+            <ul class="navbar_menu">
+                <li class="navbar_item">
+                    <a href="../html/members.html" class="navbar_link">Members</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="../html/shop.html" class="navbar_link">Shop</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="../html/tours.html" class="navbar_link">Tours</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="../html/albums.html" class="navbar_link active">Albums</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="albums-container" id="albums-container">
+    </div>
+
+    <script src="../js/albums.js"></script>
 </body>
 </html>

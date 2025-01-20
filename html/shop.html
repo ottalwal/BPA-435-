@@ -3,68 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Merchandise</title>
+    <title>Shop</title>
     <link rel="stylesheet" href="../css/basic.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/shop.css">
 </head>
-<body onload="UpdateCardText('MerchItem1', MerchItem1, 'MerchItemName', 20)
-UpdateCardText('MerchItem2', MerchItem2, 'MerchItemName', 10)
-UpdateCardText('MerchItem3', MerchItem3, 'MerchItemName', 15)
-UpdateCardText('MerchItem4', MerchItem4, 'MerchItemName', 20)
-UpdateCardText('MerchItem5', MerchItem5, 'MerchItemName', 30)
-UpdateCardText('MerchItem6', MerchItem6, 'MerchItemName', 20)
-UpdateCardText('MerchItem7', MerchItem7, 'MerchItemName', 50)">
-<marquee>SALE! Our T-Shirts are currently 25% OFF!! SALE!</marquee>
-<nav class="navbar">
-    <div class="navbar_container">
-        <a href="./index.html" id="navbar_logo"></a>
-        <div class="navbar_toggle" id="mobile_menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+<body>
+    <nav class="navbar">
+        <div class="navbar_container">
+            <a href="../html/index.html" class="navbar_logo">Stage Freight</a>
+            <ul class="navbar_menu">
+                <li class="navbar_item">
+                    <a href="../html/members.html" class="navbar_link">Members</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="../html/shop.html" class="navbar_link active">Shop</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="../html/tours.html" class="navbar_link">Tours</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="../html/albums.html" class="navbar_link">Albums</a>
+                </li>
+            </ul>
         </div>
-        <ul class="navbar_menu">
-            <li class="navbar_item">
-                <a href="./members.html" class="navbar_link">
-                  Members
-                </a>
-            </li>
-            <li class="navbar_item">
-                <a href="./shop.html" class="navbar_link">
-                  Shop
-                </a>
-            </li>
-            <li class="navbar_item">
-                <a href="./tours.html" class="navbar_link">
-                  Tours
-                </a>
-            </li>
-            <li class="navbar_item">
-                <a href="./albums.html" class="navbar_link">
-                    Albums
-                </a>
-            </li>
-            
-        </ul>
+    </nav>
+
+    <section class="shop-banner">
+        <marquee>SALE! Our T-Shirts are currently 25% OFF!! SALE!</marquee>
+    </section>
+
+    <div class="shop-container">
+        <div class="product-grid" id="product-grid">
+        </div>
+
+        <div class="shopping-cart">
+            <h2>Shopping Cart</h2>
+            <ul class="cart-items" id="cart-items">
+            </ul>
+            <div class="cart-total">
+                <strong>Total: $<span id="cart-total">0.00</span></strong>
+            </div>
+            <button class="checkout-button">Checkout</button>
+        </div>
     </div>
-</nav>
-<div id="TotalCost">
-</div>
-<div id="OrderList">
-    <div class='OrderItem' id='MerchItem1'>
-    </div>
-    <div class='OrderItem' id='MerchItem2'>
-    </div>
-    <div class='OrderItem' id='MerchItem3'>
-    </div>
-    <div class='OrderItem' id='MerchItem4'>
-    </div>
-    <div class='OrderItem' id='MerchItem5'>
-    </div>
-    <div class='OrderItem' id='MerchItem6'>
-    </div>
-    <div class='OrderItem' id='MerchItem7'>
-    </div>
-</div>
-    <script src="../js/Shop.js"></script>
+
+    <script src="../js/shop.js"></script>
 </body>
 </html>

@@ -5,8 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Members</title>
     <link rel="stylesheet" href="../css/basic.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/members.css">
 </head>
 <body>
-    
+    <nav class="navbar">
+        <div class="navbar_container">
+            <a href="../html/index.html" class="navbar_logo">Stage Freight</a>
+            <ul class="navbar_menu">
+                <li class="navbar_item">
+                    <a href="../html/members.html" class="navbar_link active">Members</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="../html/shop.html" class="navbar_link">Shop</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="../html/tours.html" class="navbar_link">Tours</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="../html/albums.html" class="navbar_link">Albums</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="members-grid">
+        <div class="member-card" data-member-id="member1">
+            <img src="../res/member1.jpg" alt="Member 1">
+            <div class="member-info">
+                <h2>Tamara Gruevska</h2>
+                <p>Age: 18</p>
+                <blockquote>"Love language is money"</blockquote>
+            </div>
+        </div>
+        <div class="member-card" data-member-id="member2">
+            <img src="../res/member2.jpg" alt="Member 2">
+            <div class="member-info">
+                <h2>Baslel Somethin</h2>
+                <p>Age: 89</p>
+                <blockquote>"January 16th incident"</blockquote>
+            </div>
+        </div>
+        <div class="member-card" data-member-id="member3">
+            <img src="../res/member3.jpg" alt="Member 3">
+            <div class="member-info">
+                <h2>Ha Ben</h2>
+                <p>Age: 35</p>
+                <blockquote>"My dad owns fortnite (some car place)"</blockquote>
+            </div>
+        </div>
+        <div class="member-card" data-member-id="member4">
+            <img src="../res/member4.jpg" alt="Member 4">
+            <div class="member-info">
+                <h2>Owen Gilligan</h2>
+                <p>Age: 17</p>
+                <blockquote>"Living a life worth living."</blockquote>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/members.js"></script>
 </body>
 </html>

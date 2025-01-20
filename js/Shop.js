@@ -1,196 +1,89 @@
-let ElList = document.querySelector('#OrderList')
+document.addEventListener('DOMContentLoaded', () => {
+    const productGrid = document.getElementById('product-grid');
+    const cartItemsList = document.getElementById('cart-items');
+    const cartTotalSpan = document.getElementById('cart-total');
 
-function LocalStorageSet(){
-    if (localStorage.length == 0){
-        localStorage.setItem("MerchItem1", 0)
-        localStorage.setItem("MerchItem2", 0)
-        localStorage.setItem("MerchItem3", 0)
-        localStorage.setItem("MerchItem4", 0)
-        localStorage.setItem("MerchItem5", 0)
-        localStorage.setItem("MerchItem6", 0)
-        localStorage.setItem("MerchItem7", 0)
-        localStorage.setItem("Balance", 0)
-        localStorage.setItem("TotalCost", 0)
-        localStorage.setItem("MerchItemPrice1", 20)
-        localStorage.setItem("MerchItemPrice2", 10)
-        localStorage.setItem("MerchItemPrice3", 15)
-        localStorage.setItem("MerchItemPrice4", 20)
-        localStorage.setItem("MerchItemPrice5", 30)
-        localStorage.setItem("MerchItemPrice6", 20)
-        localStorage.setItem("MerchItemPrice7", 50)
-    }
-}
+    let cart = JSON.parse(localStorage.getItem('shoppingCart')) || {};
 
-LocalStorageSet()
+    const products = [
+        { id: 'product1', name: 'Freight T-Shirt', price: 25, image: '../res/tshirt.jpg' },
+        { id: 'product2', name: 'Band Poster', price: 10, image: '../res/poster.jpg' },
+        { id: 'product3', name: 'Signed CD', price: 15, image: '../res/cd.jpg' },
+        { id: 'product4', name: 'Freight Hat', price: 20, image: '../res/hat.jpg' },
+        { id: 'product5', name: 'Vinyl Record', price: 30, image: '../res/vinyl.jpg' },
+        { id: 'product6', name: 'Sticker Pack', price: 5, image: '../res/stickers.jpg' },
+        { id: 'product7', name: 'Band Keychain', price: 8, image: '../res/keychain.jpg' },
+        // Add more products here
+    ];
 
-let MerchItem1 = localStorage.getItem("MerchItem1");
-let MerchItem2 = localStorage.getItem("MerchItem2");
-let MerchItem3 = localStorage.getItem("MerchItem3");
-let MerchItem4 = localStorage.getItem("MerchItem4");
-let MerchItem5 = localStorage.getItem("MerchItem5");
-let MerchItem6 = localStorage.getItem("MerchItem6");
-let MerchItem7 = localStorage.getItem("MerchItem7");
+    function renderProducts() {
+        productGrid.innerHTML = '';
+        products.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.classList.add('product-card');
+            productCard.innerHTML = `
+                <img src="${product.image}" alt="${product.name}">
+                <h3 class="product-title">${product.name}</h3>
+                <p class="product-price">$${product.price.toFixed(2)}</p>
+                <button class="add-to-cart" data-product-id="${product.id}">Add to Cart</button>
+            `;
+            productGrid.appendChild(productCard);
+        });
+    }
 
-function CallAThing(){
-    console.log(localStorage.getItem("MerchItemPrice1"))
-    UpdateCardText('MerchItem1', MerchItem1, 'MerchItemName', localStorage.getItem("MerchItemPrice1"))
-    UpdateCardText('MerchItem2', MerchItem2, 'MerchItemName', localStorage.getItem("MerchItemPrice2"))
-    UpdateCardText('MerchItem3', MerchItem3, 'MerchItemName', localStorage.getItem("MerchItemPrice3"))
-    UpdateCardText('MerchItem4', MerchItem4, 'MerchItemName', localStorage.getItem("MerchItemPrice4"))
-    UpdateCardText('MerchItem5', MerchItem5, 'MerchItemName', localStorage.getItem("MerchItemPrice5"))
-    UpdateCardText('MerchItem6', MerchItem6, 'MerchItemName', localStorage.getItem("MerchItemPrice6"))
-    UpdateCardText('MerchItem7', MerchItem7, 'MerchItemName', localStorage.getItem("MerchItemPrice7"))
-}
-
-//Because out params don't exist in javascript, this just became 50x longer
-function AddToOrderList(Merch){
-    if("MerchItem1" == Merch){
-        MerchItem1++;
-    }
-    if("MerchItem2" == Merch){
-        MerchItem2++;
-    }
-    if("MerchItem3" == Merch){
-        MerchItem3++;
-    }
-    if("MerchItem4" == Merch){
-        MerchItem4++;
-    }
-    if("MerchItem5" == Merch){
-        MerchItem5++;
-    }
-    if("MerchItem6" == Merch){
-        MerchItem6++;
-    }
-    if("MerchItem7" == Merch){
-        MerchItem7++;
-    }
-    
-    localStorage.setItem("MerchItem1", MerchItem1)
-    localStorage.setItem("MerchItem2", MerchItem2)
-    localStorage.setItem("MerchItem3", MerchItem3)
-    localStorage.setItem("MerchItem4", MerchItem4)
-    localStorage.setItem("MerchItem5", MerchItem5)
-    localStorage.setItem("MerchItem6", MerchItem6)
-    localStorage.setItem("MerchItem7", MerchItem7)
-}
-
-function RemoveFromOrderList(Merch){
-    if("MerchItem1" == Merch){
-        MerchItem1--;
-        console.log("Minus" + Merch)
-        if (MerchItem1 < 0){
-            MerchItem1 = 0
+    function updateCartDisplay() {
+        cartItemsList.innerHTML = '';
+        let totalPrice = 0;
+        for (const productId in cart) {
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                const cartItem = document.createElement('li');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `
+                    <span class="cart-item-title">${product.name}</span>
+                    <div class="cart-item-quantity-controls">
+                        <button class="remove-item" data-product-id="${productId}">-</button>
+                        <span>${cart[productId]}x</span>
+                    </div>
+                    <span class="cart-item-price">$${(product.price * cart[productId]).toFixed(2)}</span>
+                `;
+                cartItemsList.appendChild(cartItem);
+                totalPrice += product.price * cart[productId];
+            }
         }
-    }
-    if("MerchItem2" == Merch){
-        MerchItem2--;
-        console.log("Minus" + Merch)
-        if (MerchItem2 < 0){
-            MerchItem2 = 0
-        }
-    }
-    if("MerchItem3" == Merch){
-        MerchItem3--;
-        console.log("Minus" + Merch)
-        if (MerchItem3 < 0){
-            MerchItem3 = 0
-        }
-    }
-    if("MerchItem4" == Merch){
-        MerchItem4--;
-        console.log("Minus" + Merch)
-        if (MerchItem4 < 0){
-            MerchItem4 = 0
-        }
-    }
-    if("MerchItem5" == Merch){
-        MerchItem5--;
-        if (MerchItem5 < 0){
-            MerchItem5 = 0
-        }
-    }
-    if("MerchItem6" == Merch){
-        MerchItem6--;
-        if (MerchItem6 < 0){
-            MerchItem6 = 0
-        }
-    }
-    if("MerchItem7" == Merch){
-        MerchItem7--;
-        if (MerchItem7 < 0){
-            MerchItem7 = 0
-        }
-    }
-    
-    localStorage.setItem("MerchItem1", MerchItem1)
-    localStorage.setItem("MerchItem2", MerchItem2)
-    localStorage.setItem("MerchItem3", MerchItem3)
-    localStorage.setItem("MerchItem4", MerchItem4)
-    localStorage.setItem("MerchItem5", MerchItem5)
-    localStorage.setItem("MerchItem6", MerchItem6)
-    localStorage.setItem("MerchItem7", MerchItem7)
-    
-    console.log(localStorage.getItem("MerchItemPrice1"))
-    CallAThing()
-    console.log(localStorage.getItem("MerchItemPrice1"))
-}
-
-function AddToOrderList(Merch){
-    if('MerchItem1' == Merch){
-        MerchItem1++;
-    }
-    if('MerchItem2' == Merch){
-        MerchItem2++;
-    }
-    if("MerchItem3" == Merch){
-        MerchItem3++;
-    }
-    if("MerchItem4" == Merch){
-        MerchItem4++;
-    }
-    if("MerchItem5" == Merch){
-        MerchItem5++;
-    }
-    if("MerchItem6" == Merch){
-        MerchItem6++;
-    }
-    if("MerchItem7" == Merch){
-        MerchItem7++;
-    }
-    
-    localStorage.setItem("MerchItem1", MerchItem1)
-    localStorage.setItem("MerchItem2", MerchItem2)
-    localStorage.setItem("MerchItem3", MerchItem3)
-    localStorage.setItem("MerchItem4", MerchItem4)
-    localStorage.setItem("MerchItem5", MerchItem5)
-    localStorage.setItem("MerchItem6", MerchItem6)
-    localStorage.setItem("MerchItem7", MerchItem7)
-
-    UpdateCardText('MerchItem1', MerchItem1, 'MerchItemName', 20)
-    UpdateCardText('MerchItem2', MerchItem2, 'MerchItemName', 10)
-    UpdateCardText('MerchItem3', MerchItem3, 'MerchItemName', 15)
-    UpdateCardText('MerchItem4', MerchItem4, 'MerchItemName', 20)
-    UpdateCardText('MerchItem5', MerchItem5, 'MerchItemName', 30)
-    UpdateCardText('MerchItem6', MerchItem6, 'MerchItemName', 20)
-    UpdateCardText('MerchItem7', MerchItem7, 'MerchItemName', 50)
-}
-
-function ClickedACard(CardParent, Count, Merch){
-    CardParent.querySelector('p').innerHTML = "You have ordered " + Count + " " + Merch
-}
-
-function UpdateCardText(CardParent, Count, Merch, Price){
-    ElList.querySelector("#" + CardParent).innerHTML = "<h2>"+ Merch +"</h2><h1>Price: $" + Price + "</h1>\
-    <div class='ButtonContainer'><button type='button' onclick='RemoveFromOrderList(\"" + CardParent + "\")'>&#8722;</button>" + Count + " ($" + Count*Price +")\
-    <button type='button' onclick='AddToOrderList(\"" + CardParent + "\")''>&#43;</button></div>"
-    
-    let TotalPrice = 0;
-    for(let i = 1; i<ElList.childElementCount; i++){
-        TotalPrice += parseFloat(localStorage.getItem("MerchItem" + i) * localStorage.getItem("MerchItemPrice" + i))
+        cartTotalSpan.textContent = totalPrice.toFixed(2);
     }
 
-    localStorage.setItem("TotalCost", TotalPrice)
+    function addToCart(productId) {
+        cart[productId] = (cart[productId] || 0) + 1;
+        localStorage.setItem('shoppingCart', JSON.stringify(cart));
+        updateCartDisplay();
+    }
 
-    document.querySelector("#TotalCost").innerHTML = "<h2>Total Price of their Cart: " + localStorage.getItem("TotalCost") + "</h2>"
-}
+    function removeFromCart(productId) {
+        if (cart[productId] > 1) {
+            cart[productId]--;
+        } else {
+            delete cart[productId];
+        }
+        localStorage.setItem('shoppingCart', JSON.stringify(cart));
+        updateCartDisplay();
+    }
+
+    productGrid.addEventListener('click', event => {
+        if (event.target.classList.contains('add-to-cart')) {
+            const productId = event.target.dataset.productId;
+            addToCart(productId);
+        }
+    });
+
+    cartItemsList.addEventListener('click', event => {
+        if (event.target.classList.contains('remove-item')) {
+            const productId = event.target.dataset.productId;
+            removeFromCart(productId);
+        }
+    });
+
+    renderProducts();
+    updateCartDisplay();
+});
