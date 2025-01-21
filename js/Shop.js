@@ -6,13 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let cart = JSON.parse(localStorage.getItem('shoppingCart')) || {};
 
     const products = [
-        { id: 'product1', name: 'Freight T-Shirt', price: 25, image: '../res/tshirt.jpg' },
-        { id: 'product2', name: 'Band Poster', price: 10, image: '../res/poster.jpg' },
-        { id: 'product3', name: 'Signed CD', price: 15, image: '../res/cd.jpg' },
-        { id: 'product4', name: 'Freight Hat', price: 20, image: '../res/hat.jpg' },
-        { id: 'product5', name: 'Vinyl Record', price: 30, image: '../res/vinyl.jpg' },
-        { id: 'product6', name: 'Sticker Pack', price: 5, image: '../res/stickers.jpg' },
-        { id: 'product7', name: 'Band Keychain', price: 8, image: '../res/keychain.jpg' },
+        { id: 'product1', name: 'Freight T-Shirt', price: 25, image: './res/tshirt.jpg' },
+        { id: 'product2', name: 'Band Poster', price: 10, image: './res/poster.jpg' },
+        { id: 'product3', name: 'Signed CD', price: 15, image: './res/cd.jpg' },
+        { id: 'product4', name: 'Freight Hat', price: 20, image: './res/hat.jpg' },
+        { id: 'product5', name: 'Vinyl Record', price: 30, image: './res/vinyl.jpg' },
+        { id: 'product6', name: 'Sticker Pack', price: 5, image: './res/stickers.jpg' },
+        { id: 'product7', name: 'Band Keychain', price: 8, image: './res/keychain.jpg' },
         
     ];
 

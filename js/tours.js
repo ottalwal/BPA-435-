@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextButton = document.getElementById('next-tour');
 
     const tours = [
-        { image: '../res/tour1.jpg', location: 'New York', date: '2025-07-15' },
-        { image: '../res/tour2.jpg', location: 'Los Angeles', date: '2025-07-22' },
-        { image: '../res/tour3.jpg', location: 'Chicago', date: '2025-07-29' },
-        { image: '../res/tour4.jpg', location: 'London', date: '2025-08-05' },
+        { image: './res/tour1.jpg', location: 'New York', date: '2025-07-15' },
+        { image: './res/tour2.jpg', location: 'Los Angeles', date: '2025-07-22' },
+        { image: './res/tour3.jpg', location: 'Chicago', date: '2025-07-29' },
+        { image: './res/tour4.jpg', location: 'London', date: '2025-08-05' },
     ];
 
     let currentIndex = 0;

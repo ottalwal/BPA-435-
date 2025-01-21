@@ -4,19 +4,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const albums = [
         {
             title: 'Death March',
-            image: '../res/album1.jpg',
+            image: './res/album1.jpg',
             tracks: ['Bathroom Break', 'Brick Road', 'Battlefield', 'Ballroom'],
             price: 12.99
         },
         {
             title: 'Metamorphosis',
-            image: '../res/album2.jpg',
+            image: './res/album2.jpg',
             tracks: ['Cocoon ', 'Chemical', 'Color ', 'Cafe Clover'],
             price: 14.99
         },
         {
             title: 'Cheap',
-            image: '../res/album3.jpg',
+            image: './res/album3.jpg',
             tracks: ['Dirty', 'Deeds', 'Done', 'Dirt'],
             price: 15.99
         },
