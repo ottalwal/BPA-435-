@@ -13,7 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 'product5', name: 'Vinyl Record', price: 30, image: './res/vinyl.jpg' },
         { id: 'product6', name: 'Sticker Pack', price: 5, image: './res/stickers.jpg' },
         { id: 'product7', name: 'Band Keychain', price: 8, image: './res/keychain.jpg' },
-        
+        { id: 'tourTicket1', name: 'New York Tour Ticket', price: 50, image: './res/tour1.jpg' },
+        { id: 'tourTicket2', name: 'Los Angeles Tour Ticket', price: 60, image: './res/tour2.jpg' },
+        { id: 'tourTicket3', name: 'Chicago Tour Ticket', price: 55, image: './res/tour3.jpg' },
+        { id: 'tourTicket4', name: 'London Tour Ticket', price: 70, image: './res/tour4.jpg' },
     ];
 
     function renderProducts() {
@@ -70,6 +73,15 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCartDisplay();
     }
 
+    function handleAddToCartFromUrl() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('addToCart');
+        if (productId) {
+            addToCart(productId);
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+    }
+
     productGrid.addEventListener('click', event => {
         if (event.target.classList.contains('add-to-cart')) {
             const productId = event.target.dataset.productId;
@@ -86,4 +98,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderProducts();
     updateCartDisplay();
+    handleAddToCartFromUrl();
 });

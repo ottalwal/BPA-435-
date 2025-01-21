@@ -9,6 +9,7 @@
   --brand-black: rgb(35, 32, 32);
   --brand-red: rgb(238, 52, 36);
   --brand-blue: #71afe6;
+  --brand-blue-rgb: 113, 175, 230;
   --White: rgb(255, 255, 255);
 }
 *{
@@ -115,16 +116,42 @@ body {
     background: linear-gradient( 50deg, var(--brand-red) 0%, #f2f2f2);
 }
 
+.site-footer {
+  background-color: var(--brand-black);
+  color: var(--White);
+  padding: 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.footer-links a {
+  color: var(--White);
+  text-decoration: none;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--brand-red);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .centered {
-        font-size: 1.5rem;
-    }
-    .main_btn {
-        font-size: 1rem;
-        padding: 10px 15px;
-    }
-    .twapply {
-        font-size: 20px;
-    }
+  .centered {
+    font-size: 1.5rem;
+  }
+  .main_btn {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+  .twapply {
+    font-size: 20px;
+  } 
+  .site-footer {
+    padding: 15px;
+  }
+  .footer-links a {
+    margin: 0 10px;
+    font-size: 0.9rem;
+  }
 }

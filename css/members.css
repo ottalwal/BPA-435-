@@ -56,6 +56,27 @@
     margin-bottom: 15px;
 }
 
+.band-info-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: var(--brand-black);
+    border-radius: 8px;
+    color: var(--White);
+}
+
+.band-info-container h2 {
+    color: var(--brand-blue);
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--Grey);
+    padding-bottom: 5px;
+}
+
+.band-info-container p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
 /* MOBILE STUFFSS YUHHHH */
 @media (max-width: 768px) {
     .members-grid {
@@ -75,4 +96,15 @@
     .member-card:hover img {
         opacity: 1;
     }
+
+    .band-info-container {
+        padding: 15px;
+    }
+    .band-info-container h2 {
+        font-size: 1.3rem;
+    }
+    .band-info-container p {
+        font-size: 0.95rem;
+    }
+
 }

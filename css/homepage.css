@@ -42,8 +42,7 @@
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.4);
 }
-
-/* Loading Styling *
+/* Loading Styling */
 .loading_screen {
   position: fixed;
   width: 100%;
@@ -80,4 +79,3 @@
   background: #fff;
   z-index: 99999999;
 }
-*/
