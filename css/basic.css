@@ -21,6 +21,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: black;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 /* Marquee (Sliding Text) Formatting */
@@ -121,7 +122,7 @@ body {
   color: var(--White);
   padding: 20px;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 19.25vh;
 }
 
 .footer-links a {
