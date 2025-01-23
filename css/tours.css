@@ -91,6 +91,17 @@
     right: 10px;
 }
 
+.site-footer {
+    position: relative;
+    bottom: -28rem;
+    background-color: var(--brand-black);
+    color: var(--White);
+    padding: 20px;
+    text-align: center;
+    margin-top: 19.25vh;
+  }
+  
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .tour-info {
